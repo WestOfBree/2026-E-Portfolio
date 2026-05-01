@@ -22,5 +22,33 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+.floating-blob {
+  animation: float 9s ease-in-out infinite;
+}
+
+.stagger-fade {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: rise-in 0.7s ease-out forwards;
+  animation-delay: calc(var(--stagger, 0) * 120ms);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes rise-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
