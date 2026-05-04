@@ -68,7 +68,7 @@ export default function Home() {
                 <div className="rounded-2xl bg-pink-200 p-4 text-indigo-900 sm:col-span-2">
                   <p className="text-base font-black">Favorite Stack</p>
                   <p className="mt-1 text-sm font-semibold">
-                    Next.js, TypeScript, Tailwind, Motion
+                    Next.js, TypeScript, Tailwind, Vercel
                   </p>
                 </div>
               </div>

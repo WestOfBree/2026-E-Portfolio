@@ -52,7 +52,7 @@ const toolbox = [
 
 const characterStats = [
 	{ label: "UI Craft", value: 68, widthClass: "w-[68%]" },
-	{ label: "Motion", value: 54, widthClass: "w-[54%]" },
+	{ label: "Styling", value: 54, widthClass: "w-[54%]" },
 	{ label: "Accessibility", value: 61, widthClass: "w-[61%]" },
 	{ label: "Frontend Systems", value: 65, widthClass: "w-[65%]" },
 ];
