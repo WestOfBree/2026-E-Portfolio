@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
+import Headshot from "../../public/photos/Headshot.jpg";
 
 const strengths = [
 	{
@@ -125,13 +127,8 @@ const AboutMePage = () => {
 								aria-label="Headshot placeholder"
 								className="flex aspect-4/5 items-center justify-center rounded-xl border border-indigo-100 bg-white text-center"
 							>
-								<div className="px-4">
-									<p className="text-sm font-black uppercase tracking-[0.14em] text-indigo-600">
-										Headshot Space
-									</p>
-									<p className="mt-2 text-sm text-indigo-800/80">
-										Replace this area with your portrait image.
-									</p>
+								<div className="w-full h-full flex items-center justify-center overflow-hidden">
+									<Image src="/photos/Headshot2.webp" alt="Headshot of Brianna Thomas" className="rounded-lg object-cover h-full w-full" width={350} height={320} />
 								</div>
 							</div>
 						</div>

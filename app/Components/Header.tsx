@@ -14,13 +14,13 @@ export default function Header() {
         <Link className="transition-colors hover:text-violet-700" href="/AboutMe">
           About
         </Link>
-        <Link className="transition-colors hover:text-violet-700" href="#contact">
+        <Link className="transition-colors hover:text-violet-700" href="/Contact">
           Contact
         </Link>
       </nav>
       <Link
         className="rounded-full bg-violet-500 px-4 py-2 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
-        href="#contact"
+        href="/Contact"
       >
         Let&apos;s Build
       </Link>

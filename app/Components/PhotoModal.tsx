@@ -57,7 +57,7 @@ const PhotoModal = ({
 		<div
 			aria-modal="true"
 			role="dialog"
-			className="fixed inset-0 z-50 flex items-center justify-center bg-indigo-950/70 p-4 backdrop-blur-sm"
+			className="fixed inset-0 z-50 flex cursor-pointer items-center justify-center bg-indigo-950/70 p-4 backdrop-blur-sm"
 			onClick={onClose}
 		>
 			<div

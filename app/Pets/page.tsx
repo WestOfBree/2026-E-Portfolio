@@ -29,22 +29,22 @@ const petProfiles: PetProfile[] = [
     name: "Potato",
     species: "Couch Potato",
     role: "Snuggle Commander",
-    bio: "A tiny legend with big curiosity and an even bigger personality.",
-    favoriteThing: "Blanket forts and seed snacks",
-    signatureMove: "Instantly falling asleep in warm sleeves",
-    accentBar: "from-rose-300 to-violet-300",
-    panelTint: "bg-rose-50/70 border-rose-200",
+    bio: "A bread loaf legend with big curiosity and an even bigger personality.",
+    favoriteThing: "Squeeking toys during meetings and licking toes when least expected",
+    signatureMove: "Play dead (very dramatically)",
+    accentBar: "from-sky-300 to-cyan-300",
+    panelTint: "bg-sky-50/70 border-sky-200",
     photo: "/photos/Potato_1.JPEG",
   },
   {
     name: "Mouse",
-    species: "Void",
-    role: "Speed Scout",
+    species: "Fluffy Void",
+    role: "Lap Warmer Extraordinaire",
     bio: "Fast little explorer who turns every corner into an adventure.",
-    favoriteThing: "Zooming between tunnels and soft hideouts",
-    signatureMove: "Mid-sprint snack breaks",
-    accentBar: "from-sky-300 to-cyan-300",
-    panelTint: "bg-sky-50/70 border-sky-200",
+    favoriteThing: "Her reusable Target bag",
+    signatureMove: "Post Poo Zoomies",
+    accentBar: "from-rose-300 to-violet-300",
+    panelTint: "bg-rose-50/70 border-rose-200",
     photo: "/photos/Mouse_1.JPEG",
   },
 ];
@@ -109,6 +109,16 @@ const bubblePositionClasses = [
   "left-[66%] top-[980px] -rotate-1 [animation-delay:1.4s]",
 ];
 
+// Pet profile photos as PhotoTiles so they appear in the modal alongside gallery photos
+const petProfilePhotos: PhotoTile[] = petProfiles.map((pet) => ({
+  src: pet.photo,
+  alt: `${pet.name} profile`,
+  shape: "hero" as const,
+}));
+
+// All photos in one list: profile shots first, then gallery
+const allModalPhotos: PhotoTile[] = [...petProfilePhotos, ...galleryPhotos];
+
 const bubbleStyleClasses = [
   "border-rose-200 shadow-lg shadow-rose-200/45",
   "border-violet-200 shadow-lg shadow-violet-200/45",
@@ -144,7 +154,7 @@ export default function PetsPage() {
         return null;
       }
 
-      return (currentIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
+      return (currentIndex - 1 + allModalPhotos.length) % allModalPhotos.length;
     });
   };
 
@@ -154,16 +164,20 @@ export default function PetsPage() {
         return null;
       }
 
-      return (currentIndex + 1) % galleryPhotos.length;
+      return (currentIndex + 1) % allModalPhotos.length;
     });
   };
 
   return (
     <div className="relative isolate overflow-hidden bg-linear-to-b from-pink-50 via-blue-50 to-violet-50 text-indigo-950">
+      <div className="pointer-events-none absolute inset-0 -z-10 opacity-20 bg-[repeating-linear-gradient(to_bottom,transparent_0,transparent_10px,rgba(67,56,202,0.08)_11px)]" />
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-pink-300/40 blur-3xl floating-blob" />
         <div className="absolute right-0 top-28 h-80 w-80 rounded-full bg-sky-300/40 blur-3xl floating-blob [animation-delay:1.8s]" />
         <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-violet-300/35 blur-3xl floating-blob [animation-delay:0.8s]" />
+        <div className="absolute -left-10 top-16 h-72 w-72 rounded-[3rem] border border-rose-200/70 bg-white/40" />
+        <div className="absolute right-10 top-24 h-44 w-44 rotate-12 rounded-3xl border border-sky-200/80 bg-sky-100/50" />
+        <div className="absolute bottom-16 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full border border-cyan-200/80 bg-cyan-100/40" />
       </div>
 
       <Header />
@@ -189,12 +203,13 @@ export default function PetsPage() {
               className="stagger-fade overflow-hidden rounded-3xl border border-violet-100 bg-white/90 shadow-lg shadow-violet-200/35"
               style={{ ["--stagger" as string]: String(index + 2) }}
             >
-              <div className="relative h-64">
+              <div className="relative aspect-[4/3] w-full">
                 <Image
+                  onClick={() => openPhotoModal(index)}
                   src={pet.photo}
                   alt={pet.name}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="cursor-pointer object-cover object-[center_35%] transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
@@ -238,7 +253,7 @@ export default function PetsPage() {
                 key={photo.src}
                 type="button"
                 aria-label={`Open ${photo.alt}`}
-                onClick={() => openPhotoModal(index)}
+                onClick={() => openPhotoModal(petProfiles.length + index)}
                 className={`stagger-fade group relative overflow-hidden border bg-white/90 text-left ${mobileShapeClasses[photo.shape]} ${shapeFrameClasses[photo.shape]} ${bubbleStyleClasses[index]}`}
                 style={{ ["--stagger" as string]: String(index + 5) }}
               >
@@ -259,7 +274,7 @@ export default function PetsPage() {
                 key={`${photo.src}-bubble`}
                 type="button"
                 aria-label={`Open ${photo.alt}`}
-                onClick={() => openPhotoModal(index)}
+                onClick={() => openPhotoModal(petProfiles.length + index)}
                 className={`stagger-fade floating-blob group absolute overflow-hidden border bg-white/90 text-left ${desktopSizeClasses[photo.shape]} ${shapeFrameClasses[photo.shape]} ${bubblePositionClasses[index]} ${bubbleStyleClasses[index]}`}
                 style={{ ["--stagger" as string]: String(index + 5) }}
               >
@@ -278,8 +293,8 @@ export default function PetsPage() {
 
       <PhotoModal
         isOpen={selectedPhotoIndex !== null}
-        imageSrc={selectedPhotoIndex !== null ? galleryPhotos[selectedPhotoIndex].src : ""}
-        imageAlt={selectedPhotoIndex !== null ? galleryPhotos[selectedPhotoIndex].alt : "Pet photo"}
+        imageSrc={selectedPhotoIndex !== null ? allModalPhotos[selectedPhotoIndex].src : ""}
+        imageAlt={selectedPhotoIndex !== null ? allModalPhotos[selectedPhotoIndex].alt : "Pet photo"}
         onPrev={showPreviousPhoto}
         onNext={showNextPhoto}
         onClose={closePhotoModal}
