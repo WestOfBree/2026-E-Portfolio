@@ -12,10 +12,20 @@ export default function Footer() {
           <a className="hover:text-pink-500" href="mailto:b.thomas1996@yahoo.com">
             Email
           </a>
-          <a className="hover:text-pink-500" target="_blank" href="#">
+          <a
+            className="hover:text-pink-500"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/brianna-thomas-78b310b9/"
+          >
             LinkedIn
           </a>
-          <a className="hover:text-pink-500" target="_blank" href="https://github.com/WestOfBree">
+          <a
+            className="hover:text-pink-500"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/WestOfBree"
+          >
             GitHub
           </a>
         </div>
