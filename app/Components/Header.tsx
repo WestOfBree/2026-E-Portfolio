@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6 md:px-10">
-      <Link className="text-lg font-black tracking-tight" href="/">
+      <Link className="text-lg font-black tracking-tight transition-colors hover:text-violet-700" href="/">
         Brianna Thomas
       </Link>
       <nav className="hidden items-center gap-7 text-sm font-semibold md:flex">

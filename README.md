@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# E-Portfolio
 
-## Getting Started
+Welcome to the guts of my current live e-portfolio, where I show off my coding style, finished projects, and the way I think through frontend builds.
 
-First, run the development server:
+This site exists to:
+- showcase my work in a clean, visual way
+- make it easy to contact me for future projects
+- add a little personality (yes, my furbabies made it in)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+I also leaned into a character-sheet vibe on the About page to reflect my love for video games while still keeping things professional and accessible.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Area | Stack |
+| --- | --- |
+| Framework | Next.js 16 (App Router) |
+| UI | React 19 + TypeScript |
+| Styling | Tailwind CSS v4 |
+| Forms | Formspree (`@formspree/react`) |
+| Quality | ESLint |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Skills Demonstrated
 
-## Learn More
+- Component-based architecture in a real multi-page portfolio
+- Responsive layout design across home, project, about, contact, and gallery pages
+- Accessible UI patterns (semantic structure, clear labels, readable hierarchy)
+- UI animation and motion polish (staggered reveal, floating background elements)
+- Practical TypeScript usage for safer props and page structure
+- External service integration for contact form handling (Formspree)
 
-To learn more about Next.js, take a look at the following resources:
+## Project Highlights
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Custom homepage experience with timeline storytelling and animated reveal flow
+- Project case study routing with dynamic slug pages
+- Contact page with working form flow and social links
+- Fun but intentional visual language to keep things memorable, not generic
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This portfolio is still evolving as I keep learning and shipping. I treat it like a living project: regular UI improvements, cleaner architecture, and better storytelling with every update.

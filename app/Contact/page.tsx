@@ -23,7 +23,7 @@ const socialLinks = [
   },
   {
     label: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/in/brianna-thomas-78b310b9/",
     icon: "💼",
     color: "text-sky-700",
     border: "border-sky-200",
@@ -52,13 +52,13 @@ export default function ContactPage() {
       <main className="mx-auto w-full max-w-6xl px-6 pb-16 md:px-10">
         {/* Hero */}
         <section className="py-10 md:py-14">
-          <p className="inline-flex rounded-full border border-indigo-200 bg-white/85 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-indigo-700 backdrop-blur">
+          <p className="stagger-fade inline-flex rounded-full border border-indigo-200 bg-white/85 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-indigo-700 backdrop-blur [--stagger:1]">
             Send A Message
           </p>
-          <h1 className="mt-4 max-w-4xl text-balance text-4xl font-black leading-tight md:text-6xl">
+          <h1 className="stagger-fade mt-4 max-w-4xl text-balance text-4xl font-black leading-tight [--stagger:2] md:text-6xl">
             Let&apos;s Build Something Together
           </h1>
-          <div className="mt-5 flex flex-wrap gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-indigo-700">
+          <div className="stagger-fade mt-5 flex flex-wrap gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-indigo-700 [--stagger:3]">
             <span className="rounded-full border border-indigo-200 bg-white/85 px-3 py-1">
               Quest: Open to Opportunities
             </span>
@@ -73,7 +73,7 @@ export default function ContactPage() {
 
         <div className="grid gap-8 md:grid-cols-[1fr_0.65fr]">
           {/* Contact form */}
-          <div className="relative rounded-3xl border border-indigo-100 bg-white/90 p-7 shadow-lg shadow-indigo-300/40">
+          <div className="stagger-fade relative rounded-3xl border border-indigo-100 bg-white/90 p-7 shadow-lg shadow-indigo-300/40 [--stagger:4]">
             {/* Corner brackets */}
             <div className="pointer-events-none absolute left-3 top-3 h-4 w-4 border-l-2 border-t-2 border-indigo-300" />
             <div className="pointer-events-none absolute right-3 top-3 h-4 w-4 border-r-2 border-t-2 border-indigo-300" />
@@ -187,7 +187,7 @@ export default function ContactPage() {
           {/* Sidebar: links + note */}
           <div className="flex flex-col gap-6">
             {/* Social links */}
-            <div className="relative rounded-3xl border border-indigo-100 bg-white/90 p-6 shadow-lg shadow-indigo-300/40">
+            <div className="stagger-fade relative rounded-3xl border border-indigo-100 bg-white/90 p-6 shadow-lg shadow-indigo-300/40 [--stagger:5]">
               <div className="pointer-events-none absolute left-3 top-3 h-4 w-4 border-l-2 border-t-2 border-indigo-300" />
               <div className="pointer-events-none absolute right-3 top-3 h-4 w-4 border-r-2 border-t-2 border-indigo-300" />
               <div className="pointer-events-none absolute bottom-3 left-3 h-4 w-4 border-b-2 border-l-2 border-indigo-300" />
@@ -198,8 +198,8 @@ export default function ContactPage() {
               </p>
 
               <ul className="flex flex-col gap-3">
-                {socialLinks.map((link) => (
-                  <li key={link.label}>
+                {socialLinks.map((link, index) => (
+                  <li key={link.label} className={`stagger-fade [--stagger:${index + 6}]`}>
                     <a
                       href={link.href}
                       target={link.href.startsWith("mailto") ? undefined : "_blank"}
@@ -215,7 +215,7 @@ export default function ContactPage() {
             </div>
 
             {/* Availability note */}
-            <div className="relative rounded-3xl border border-emerald-200 bg-emerald-50/80 p-6 shadow-lg shadow-emerald-200/40">
+            <div className="stagger-fade relative rounded-3xl border border-emerald-200 bg-emerald-50/80 p-6 shadow-lg shadow-emerald-200/40 [--stagger:9]">
               <div className="pointer-events-none absolute left-3 top-3 h-4 w-4 border-l-2 border-t-2 border-emerald-300" />
               <div className="pointer-events-none absolute right-3 top-3 h-4 w-4 border-r-2 border-t-2 border-emerald-300" />
               <div className="pointer-events-none absolute bottom-3 left-3 h-4 w-4 border-b-2 border-l-2 border-emerald-300" />

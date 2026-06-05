@@ -5,7 +5,7 @@ import { projects } from "./projectData";
 
 export default function ProjectsPage() {
 	return (
-		<div className="relative isolate overflow-hidden bg-gradient-to-b from-pink-50 via-blue-50 to-violet-50 text-indigo-950">
+		<div className="relative isolate overflow-hidden bg-linear-to-b from-pink-50 via-blue-50 to-violet-50 text-indigo-950">
 			<div className="pointer-events-none absolute inset-0 -z-10 opacity-20 bg-[repeating-linear-gradient(to_bottom,transparent_0,transparent_10px,rgba(67,56,202,0.08)_11px)]" />
 			<div className="pointer-events-none absolute inset-0 -z-10">
 				<div className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-pink-300/40 blur-3xl floating-blob" />
@@ -20,13 +20,13 @@ export default function ProjectsPage() {
 
 			<main className="mx-auto w-full max-w-6xl px-6 pb-12 md:px-10">
 				<section className="py-10 md:py-16">
-					<p className="inline-flex rounded-full border border-violet-200 bg-white/80 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-violet-700 backdrop-blur">
+					<p className="stagger-fade inline-flex rounded-full border border-violet-200 bg-white/80 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-violet-700 backdrop-blur [--stagger:1]">
 						Project Library
 					</p>
-					<h1 className="mt-4 text-balance text-4xl font-black md:text-6xl">
+					<h1 className="stagger-fade mt-4 text-balance text-4xl font-black [--stagger:2] md:text-6xl">
 						Explore Each Build In Detail
 					</h1>
-					<p className="mt-4 max-w-2xl text-lg text-indigo-800/85">
+					<p className="stagger-fade mt-4 max-w-2xl text-lg text-indigo-800/85 [--stagger:3]">
 						Every project page follows a consistent shell so case studies feel
 						cohesive while still highlighting each product&apos;s unique goals.
 					</p>
@@ -40,7 +40,7 @@ export default function ProjectsPage() {
 							style={{ ["--stagger" as string]: String(index + 1) }}
 						>
 							<div
-								className={`mb-4 h-2 w-24 rounded-full bg-gradient-to-r ${project.accent}`}
+								className={`mb-4 h-2 w-24 rounded-full bg-linear-to-r ${project.accent}`}
 							/>
 							<p className="text-xs font-extrabold uppercase tracking-[0.14em] text-violet-500">
 								{project.tag}
