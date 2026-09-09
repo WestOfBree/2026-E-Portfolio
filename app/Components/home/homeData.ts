@@ -19,7 +19,7 @@ export type ToolkitColumn = {
 
 export const timelineItems: TimelineItem[] = [
   {
-    period: "Now · Ongoing",
+    period: "OCT 2025 · Present",
     title: "Frontend Developer",
     company: "Independent & Internships",
     meta: "FES · Skinstric · self-directed builds",
@@ -39,7 +39,7 @@ export const timelineItems: TimelineItem[] = [
     color: "purple",
   },
   {
-    period: "Dec 2022 - Present",
+    period: "Dec 2022 - Aug 2026",
     title: "Audio Technician",
     company: "Audiology Practice",
     meta: "Hearing aids",

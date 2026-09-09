@@ -2,6 +2,27 @@ import type { ProjectEntry } from "../Components/ProjectShell";
 
 export const projects: ProjectEntry[] = [
   {
+    slug: "aerial-coach-planner",
+    title: "Aerial Coach Planner",
+    tagline:
+      "An in-class Next.js and Firebase app for planning and managing aerial coaching sessions.",
+    summary:
+      "Aerial Coach Planner focuses on helping coaches organize and track their lesson plans and students efficiently. I built an interface that keeps lesson planning and communication simple while keeping Firebase data organized and fast.",
+    tag: "Next.js + Firebase",
+    accent: "from-pink-200 to-violet-300",
+    year: "2026",
+    role: "Frontend Developer",
+    stack: ["Next.js", "Firebase", "TypeScript", "Tailwind"],
+    challenge:
+      "Designing an intuitive interface for coaches to plan lessons and share materials while ensuring real-time Firebase data sync.",
+    solution:
+      "Created a lesson planning interface with reusable components, clear visual hierarchy, and optimized Firebase queries for fast data access.",
+    impact:
+      "Enabled coaches to efficiently plan and manage lessons, classes, and student profiles, improving overall workflow and communication.",
+    liveUrl: "https://lesson-planner-beryl.vercel.app/",
+    githubUrl: "https://github.com/WestOfBree/Lesson-Planner",
+  },
+   {
     slug: "Summarist",
     title: "Summarist",
     tagline:
@@ -35,7 +56,7 @@ export const projects: ProjectEntry[] = [
     role: "Frontend Developer",
     stack: ["React", "JavaScript", "CSS", "HTML"],
     challenge:
-      "Fetching and normalising data from an external movie API while keeping search results responsive and easy to browse.",
+      "Fetching and normalizing data from an external movie API while keeping search results responsive and easy to browse.",
     solution:
       "Implemented a debounced search input, dynamic result rendering, and a clean card layout that surfaces key movie details at a glance.",
     impact:
