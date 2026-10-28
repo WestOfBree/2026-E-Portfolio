@@ -1,8 +1,16 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import Headshot from "../../public/photos/Headshot.jpg";
+
+export const metadata: Metadata = {
+	title: "About - Freelance Web Developer",
+	description:
+		"Learn about Brianna Thomas, a freelance web developer with a patient-care background who builds friendly, accessible, high-performing websites.",
+	alternates: { canonical: "/AboutMe" },
+};
 
 const strengths = [
 	{

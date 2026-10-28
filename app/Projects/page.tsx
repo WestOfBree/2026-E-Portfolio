@@ -1,7 +1,15 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import { projects } from "./projectData";
+
+export const metadata: Metadata = {
+	title: "Website Projects & Case Studies",
+	description:
+		"Browse custom websites and web apps built with Next.js, React, and Tailwind CSS, including client work for real businesses.",
+	alternates: { canonical: "/Projects" },
+};
 
 export default function ProjectsPage() {
 	return (

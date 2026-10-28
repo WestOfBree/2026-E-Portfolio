@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Footer from "../../Components/Footer";
 import Header from "../../Components/Header";
@@ -10,6 +11,19 @@ type ProjectDetailPageProps = {
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
+}
+
+export async function generateMetadata({ params }: ProjectDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+  if (!project) return {};
+
+  return {
+    title: `${project.title} - Web Development Case Study`,
+    description: project.tagline,
+    alternates: { canonical: `/Projects/${project.slug}` },
+    openGraph: { title: project.title, description: project.tagline, url: `/Projects/${project.slug}` },
+  };
 }
 
 export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {

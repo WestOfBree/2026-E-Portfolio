@@ -1,9 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import ExperienceTimeline from "./Components/home/ExperienceTimeline";
 import ToolkitAndCta from "./Components/home/ToolkitAndCta";
 import { timelineItems, toolkitColumns } from "./Components/home/homeData";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const Home = () => {
   return (
