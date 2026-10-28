@@ -15,6 +15,7 @@ export type ProjectEntry = {
   impact: string;
   liveUrl?: string;
   githubUrl?: string;
+  sourceNote?: string;
 };
 
 type ProjectShellProps = {
@@ -93,14 +94,26 @@ export default function ProjectShell({ project }: ProjectShellProps) {
           </a>
         ) : null}
         {project.githubUrl ? (
-          <a
-            href={project.githubUrl}
-            className="rounded-full border border-blue-200 bg-white px-5 py-2.5 text-sm font-bold text-indigo-800 transition-colors hover:border-violet-400"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Source Code
-          </a>
+          <div className="group relative">
+            <a
+              href={project.githubUrl}
+              className="block rounded-full border border-blue-200 bg-white px-5 py-2.5 text-sm font-bold text-indigo-800 transition-colors hover:border-violet-400"
+              target="_blank"
+              rel="noreferrer"
+              aria-describedby={project.sourceNote ? "source-note" : undefined}
+            >
+              Source Code
+            </a>
+            {project.sourceNote ? (
+              <span
+                id="source-note"
+                role="tooltip"
+                className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-64 -translate-x-1/2 rounded-xl bg-indigo-900 px-3 py-2 text-center text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity group-focus-within:opacity-100 group-hover:opacity-100"
+              >
+                {project.sourceNote}
+              </span>
+            ) : null}
+          </div>
         ) : null}
       </div>
 

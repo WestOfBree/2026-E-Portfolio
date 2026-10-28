@@ -21,7 +21,9 @@ export const projects: ProjectEntry[] = [
       "Enabled prospective students to easily find information about courses and instructors, improving user engagement and enrollment inquiries.",
     liveUrl: "https://www.rhodeislandbodypiercing.com/",
     githubUrl:
-      "The source code for this project is not publicly available per client request.",
+      "https://github.com/WestOfBree/RI-Body-Piercing-Academy",
+    sourceNote:
+      "This is a private repository. The source code is not publicly available per client request.",
   },
   {
     slug: "aerial-coach-planner",
