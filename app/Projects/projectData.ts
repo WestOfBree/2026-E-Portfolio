@@ -23,6 +23,7 @@ export const projects: ProjectEntry[] = [
     githubUrl:
       "The source code for this project is not publicly available per client request.",
   },
+  {
     slug: "aerial-coach-planner",
     title: "Aerial Coach Planner",
     tagline:
