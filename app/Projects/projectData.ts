@@ -2,6 +2,27 @@ import type { ProjectEntry } from "../Components/ProjectShell";
 
 export const projects: ProjectEntry[] = [
   {
+    slug: "rhode-island-body-piercing-academy",
+    title: "Rhode Island Body Piercing Academy",
+    tagline:
+      "A client commissioned website for a new body piercing academy in Rhode Island.",
+    summary:
+      "The Rhode Island Body Piercing Academy website focuses on providing information about courses, instructors, and enrollment. I built an interface that is visually appealing and easy to navigate while keeping content management simple.",
+    tag: "Next.js + Vercel",
+    accent: "from-pink-200 to-violet-300",
+    year: "2026",
+    role: "Frontend Developer",
+    stack: ["Next.js", "Vercel", "TypeScript", "Tailwind"],
+    challenge:
+      "Designing an intuitive interface for prospective students to learn about the academy, browse courses, and contact instructors.",
+    solution:
+      "Created a responsive website with reusable components, clear visual hierarchy, and optimized content management for fast updates.",
+    impact:
+      "Enabled prospective students to easily find information about courses and instructors, improving user engagement and enrollment inquiries.",
+    liveUrl: "https://www.rhodeislandbodypiercing.com/",
+    githubUrl:
+      "The source code for this project is not publicly available per client request.",
+  },
     slug: "aerial-coach-planner",
     title: "Aerial Coach Planner",
     tagline:
