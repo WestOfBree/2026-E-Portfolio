@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { projects } from "./Projects/projectData";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.briannathomas.dev";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bree-thomas.com";
 
 const sitemap = (): MetadataRoute.Sitemap => {
   const staticPaths = ["", "/Projects", "/AboutMe", "/Contact", "/Pets"];

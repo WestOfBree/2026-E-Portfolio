@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.briannathomas.dev";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bree-thomas.com";
 
 const description =
   "Brianna Thomas is a freelance web developer in Rhode Island building fast, responsive, SEO-friendly custom websites with Next.js, React, and Tailwind CSS for small businesses and creators.";
